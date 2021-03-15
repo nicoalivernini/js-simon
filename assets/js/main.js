@@ -22,7 +22,7 @@ function printNumberRandom() {
 //Nascondere i numeri dopo 30 secondi
 setTimeout(function(){
     $('#num-casuali').hide();
-}, 1500);
+}, 30000);
 
 //Array contente i numeri inseriti dall'utente
 var numeriUtente = [];
@@ -40,24 +40,24 @@ setTimeout(function(){
   $('.list-num-utente').append('<li>' + numeriUtente + '</li>').show();
   //Stampo i numeri ricordati e/o indovinati
   //Pausa di 30 secondi prima del caricamento dei prompt
-}, 2500);
+}, 60000);
 
 
 console.log(numeriRandom);
 console.log(numeriUtente);
 
-var numeriUguali = [];
-
-for (var i = 0; i < numeriRandom.length; i++) {
-  for (var j = 0; j < numeriUtente.length; j++) {
-    if (numeriRandom[i] == numeriUtente[j]) {
-      numeri = numeriRandom[i];
-      numeriUguali.push(numeri);
-    }
-  }
-
-}
-console.log(numeriUguali);
+// var numeriUguali = [];
+//
+// for (var i = 0; i < numeriRandom.length; i++) {
+//   for (var j = 0; j < numeriUtente.length; j++) {
+//     if (numeriRandom[i] == numeriUtente[j]) {
+//       numeri = numeriRandom[i];
+//       numeriUguali.push(numeri);
+//     }
+//   }
+//
+// }
+// console.log(numeriUguali);
 
 // var numeriUguali = [];
 //
