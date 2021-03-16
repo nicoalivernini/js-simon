@@ -1,5 +1,8 @@
 //Array contenente i numeri random
 var numeriRandom = [];
+//Array contente i numeri inseriti dall'utente
+var numeriUtente = [];
+
 
 //Creazione numeri casuali e stampa su DOM
   // Creare 5 numeri casuali da 1 a 50
@@ -13,20 +16,12 @@ var numeriRandom = [];
 //Inserisco i numeri random in un elemento del DOM
 printNumberRandom();
 
-function printNumberRandom() {
-  //Seleziono il p in cui andrò ad inserire i numeri
-  //Stampare i numeri dentro un elemento del DOM
-  $('#num-casuali').append('<li>' + numeriRandom + '</li>');
-}
-
 //Nascondere i numeri dopo 30 secondi
 setTimeout(function(){
     $('#num-casuali').hide();
-}, 30000);
+}, 3000);
 
-//Array contente i numeri inseriti dall'utente
-var numeriUtente = [];
-
+//Utente inserisce 5 numeri e poi li appendo
 setTimeout(function(){
   for (var i = 0; i < 5; i++) {
     //Utente inserisce i numeri che ricorda attraverso il prompt
@@ -34,17 +29,38 @@ setTimeout(function(){
     //Salvo numeri utente dentro array
     numeriUtente.push(numeroU);
   }
+  // console.log(numeriUtente);
   //Stampo i numeri casuali
   $('.list-num-casuali').append('<li>' + numeriRandom + '</li>').show();
   //Stampo i numeri inseriti dall'Utente
   $('.list-num-utente').append('<li>' + numeriUtente + '</li>').show();
   //Stampo i numeri ricordati e/o indovinati
   //Pausa di 30 secondi prima del caricamento dei prompt
-}, 60000);
+  cercaNumeriArray();
+  $('.list-num-uguali').append('<li>' + numeriUguali + '</li>').show();
+  // console.log(numeriUguali);
+}, 6000);
 
 
-console.log(numeriRandom);
-console.log(numeriUtente);
+// console.log(numeriRandom);
+
+
+var numeriUguali = [];
+
+function cercaNumeriArray() {
+  for (var i = 0; i < numeriUtente.length; i++) {
+    if (numeriRandom.includes(parseInt(numeriUtente[i]))) {
+      numeriUguali.push(numeriUtente[i])
+    }
+  }
+}
+
+
+
+// $('.list-num-uguali').text(numeriUguali).show();
+
+
+
 
 // var numeriUguali = [];
 //
@@ -58,6 +74,8 @@ console.log(numeriUtente);
 //
 // }
 // console.log(numeriUguali);
+
+
 
 // var numeriUguali = [];
 //
@@ -99,4 +117,11 @@ console.log(numeriUtente);
 function randomNumber(min, max) {
   var numero = Math.floor(Math.random() * (max) + min);
   return numero;
+}
+
+//Stampo numeri casuali
+function printNumberRandom() {
+  //Seleziono il p in cui andrò ad inserire i numeri
+  //Stampare i numeri dentro un elemento del DOM
+  $('#num-casuali').append('<li>' + numeriRandom + '</li>');
 }
