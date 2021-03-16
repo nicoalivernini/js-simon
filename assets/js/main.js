@@ -2,6 +2,8 @@
 var numeriRandom = [];
 //Array contente i numeri inseriti dall'utente
 var numeriUtente = [];
+//Array contenente i numeri indovinati
+var numeriUguali = [];
 
 
 //Creazione numeri casuali e stampa su DOM
@@ -29,31 +31,15 @@ setTimeout(function(){
     //Salvo numeri utente dentro array
     numeriUtente.push(numeroU);
   }
-  // console.log(numeriUtente);
   //Stampo i numeri casuali
   $('.list-num-casuali').append('<li>' + numeriRandom + '</li>').show();
   //Stampo i numeri inseriti dall'Utente
   $('.list-num-utente').append('<li>' + numeriUtente + '</li>').show();
   //Stampo i numeri ricordati e/o indovinati
-  //Pausa di 30 secondi prima del caricamento dei prompt
   cercaNumeriArray();
   $('.list-num-uguali').append('<li>' + numeriUguali + '</li>').show();
-  // console.log(numeriUguali);
+  //Pausa di 30 secondi prima del caricamento dei prompt
 }, 60000);
-
-
-// console.log(numeriRandom);
-
-
-var numeriUguali = [];
-
-function cercaNumeriArray() {
-  for (var i = 0; i < numeriUtente.length; i++) {
-    if (numeriRandom.includes(parseInt(numeriUtente[i]))) {
-      numeriUguali.push(numeriUtente[i])
-    }
-  }
-}
 
 
 // FUNCTIONS
@@ -69,4 +55,13 @@ function printNumberRandom() {
   //Seleziono il p in cui andrò ad inserire i numeri
   //Stampare i numeri dentro un elemento del DOM
   $('#num-casuali').append('<li>' + numeriRandom + '</li>');
+}
+
+//Confronto numeri negli array
+function cercaNumeriArray() {
+  for (var i = 0; i < numeriUtente.length; i++) {
+    if (numeriRandom.includes(parseInt(numeriUtente[i]))) {
+      numeriUguali.push(numeriUtente[i])
+    }
+  }
 }
