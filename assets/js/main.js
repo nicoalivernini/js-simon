@@ -19,7 +19,7 @@ printNumberRandom();
 //Nascondere i numeri dopo 30 secondi
 setTimeout(function(){
     $('#num-casuali').hide();
-}, 3000);
+}, 30000);
 
 //Utente inserisce 5 numeri e poi li appendo
 setTimeout(function(){
@@ -39,7 +39,7 @@ setTimeout(function(){
   cercaNumeriArray();
   $('.list-num-uguali').append('<li>' + numeriUguali + '</li>').show();
   // console.log(numeriUguali);
-}, 6000);
+}, 60000);
 
 
 // console.log(numeriRandom);
@@ -54,61 +54,6 @@ function cercaNumeriArray() {
     }
   }
 }
-
-
-
-// $('.list-num-uguali').text(numeriUguali).show();
-
-
-
-
-// var numeriUguali = [];
-//
-// for (var i = 0; i < numeriRandom.length; i++) {
-//   for (var j = 0; j < numeriUtente.length; j++) {
-//     if (numeriRandom[i] == numeriUtente[j]) {
-//       numeri = numeriRandom[i];
-//       numeriUguali.push(numeri);
-//     }
-//   }
-//
-// }
-// console.log(numeriUguali);
-
-
-
-// var numeriUguali = [];
-//
-// var risultato = numeriRandom.filter(x => numeriUtente.includes(x));
-// numeriUguali.push(risultato);
-// console.log(numeriUguali);
-
-
-// var risultato = numeriRandom.filter(function(x) {
-// 	// checking second array contains the element "x"
-// 	if(numeriUtente.indexOf(x) != -1)
-// 		return true;
-// 	else
-// 		return false;
-// });
-
-// // [3, 4]
-// numeriUguali.push(risultato);
-// console.log(risultato);
-
-// var numeriUtente = [1, 2, 3, 4];
-// var numeriRandom = [3, 4, 5, 6];
-
-// var array_intersection = numeriUtente.filter(function(x) {
-// 	// checking second array contains the element "x"
-// 	if(numeriRandom.indexOf(x) != -1)
-// 		return true;
-// 	else
-// 		return false;
-// });
-//
-// // [3, 4]
-// console.log(array_intersection);
 
 
 // FUNCTIONS
